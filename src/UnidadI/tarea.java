@@ -21,7 +21,7 @@ public class tarea extends JFrame implements ActionListener{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		lbl_mensaje=new JLabel();
-		lbl_mensaje.setBounds(50, 100, 120, 30);
+		lbl_mensaje.setBounds(50, 90, 120, 30);
 		add(lbl_mensaje);
 		
 		tf_mensaje=new JTextField(20);
