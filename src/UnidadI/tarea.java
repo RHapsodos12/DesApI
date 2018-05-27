@@ -37,7 +37,6 @@ public class tarea extends JFrame implements ActionListener{
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		tarea ventana=new tarea();
 	}
 
