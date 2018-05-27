@@ -35,5 +35,6 @@ public class BorderExample
 	{
 		BorderExample guiWindow2= new BorderExample();
 		guiWindow2.launchFrame();
+		
 	}
 }
