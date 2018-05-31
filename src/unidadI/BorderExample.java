@@ -1,4 +1,4 @@
-package UnidadI;
+package unidadI;
 
 import java.awt.*;
 import javax.swing.*;
