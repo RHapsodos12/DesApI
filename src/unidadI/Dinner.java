@@ -15,7 +15,6 @@ public class Dinner extends JFrame {
 	private JLabel labelImage;
 	
 	//CONSTRUCTOR
-	
 	public Dinner() {
 		super("What's for dinner?");
 		contents=getContentPane();
