@@ -1,43 +1,50 @@
-package unidadI;
+package unidad1;
 
 import java.awt.FlowLayout;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class tarea extends JFrame implements ActionListener{
+public class HelloWorldTres extends JFrame implements ActionListener{
 	private JLabel lbl_mensaje;
 	private JButton btn_aceptar;
 	private JTextField tf_mensaje;
 	
-	public tarea()	{
+	public HelloWorldTres()	{
 		super("Hello World Tr3s");
-		setLayout(null);
-		setSize(240,200);
+		setSize(400,200);
+		setLayout(new FlowLayout());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		lbl_mensaje=new JLabel();
-		lbl_mensaje.setBounds(50, 90, 120, 30);
+		ImageIcon ic=new ImageIcon("PogChamp.jpg");
+		
+		
+		lbl_mensaje=new JLabel(ic);
 		add(lbl_mensaje);
 		
 		tf_mensaje=new JTextField(20);
-		tf_mensaje.setBounds(50, 20, 120, 30);
 		add(tf_mensaje);
 		
 		btn_aceptar=new JButton("Aceptar");
-		btn_aceptar.setBounds(50, 60, 120, 30);
 		add(btn_aceptar);
 		btn_aceptar.addActionListener(this);
+		
+		Image img= Toolkit.getDefaultToolkit().getImage("PogChamp.jpg");
+		setIconImage(img);
 		
 		setVisible(true);
 	}
 	
 	public static void main(String[] args) {
-		tarea ventana=new tarea();
+		// TODO Auto-generated method stub
+		HelloWorldTres ventana=new HelloWorldTres();
 	}
 
 	@Override
