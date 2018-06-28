@@ -185,4 +185,4 @@ public class Usuario_agregar extends JFrame implements ActionListener {
 			}
 		}
 	}
-}
+} //
