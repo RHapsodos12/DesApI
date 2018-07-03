@@ -5,6 +5,8 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
@@ -150,11 +152,53 @@ public class Usuario_agregar extends JFrame implements ActionListener {
 		
 		if(e.getSource()== btn_aceptar) {
 			
-			usuario.setMatricula(tf_matricula.getText());
-			usuario.setNombre(tf_nombre.getText());
-			usuario.setDireccion(tf_direccion.getText());
-			usuario.setTelefono(tf_telefono.getText());
-			usuario.setTelefono_contacto(tf_contacto.getText());
+			Pattern pat = Pattern.compile("^[a-zA-Z1-9](.{0,3}(?i)[a-z1-9])?");
+			Matcher mat = pat.matcher(tf_matricula.getText());
+			
+		     if (mat.matches()) {
+		         System.out.println("SI");
+		         usuario.setMatricula(tf_matricula.getText());
+		     } else {
+		         System.out.println("NO");
+		     }
+		     
+		     pat= Pattern.compile("^(?i)[a-z](.{0,48}[a-z])?");
+		     mat= pat.matcher(tf_nombre.getText());
+		     if(mat.matches()) {
+		    	 usuario.setNombre(tf_nombre.getText());
+		     } else {
+		    	 System.out.println("NO");
+		     }
+		     
+		     pat= Pattern.compile("^(?i)[a-z](.{0,48}[\\w].)?");
+		     mat= pat.matcher(tf_direccion.getText());
+		     if(mat.matches()) {
+		    	 usuario.setNombre(tf_direccion.getText());
+		     } else {
+		    	 System.out.println("NO");
+		     }
+		     
+		     pat= Pattern.compile("[0-9]{0,10}");
+		     mat= pat.matcher(tf_telefono.getText());
+		     if(mat.matches()) {
+		    	 usuario.setNombre(tf_telefono.getText());
+		     } else {
+		    	 System.out.println("NO");
+		     }
+		     
+		     pat= Pattern.compile("[0-9]{0,10}");
+		     mat= pat.matcher(tf_contacto.getText());
+		     if(mat.matches()) {
+		    	 usuario.setNombre(tf_contacto.getText());
+		     } else {
+		    	 System.out.println("NO");
+		     }
+		     
+			//usuario.setMatricula(tf_matricula.getText());
+			//usuario.setNombre(tf_nombre.getText());
+			//usuario.setDireccion(tf_direccion.getText());
+			//usuario.setTelefono(tf_telefono.getText());
+			//usuario.setTelefono_contacto(tf_contacto.getText());
 			usuario.setFoto(foto_usuario);
 			
 			boolean bs= (sexolist.getSelectedIndex()==0) ? false : true;
@@ -185,4 +229,4 @@ public class Usuario_agregar extends JFrame implements ActionListener {
 			}
 		}
 	}
-} //
+}
